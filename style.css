@@ -1,0 +1,41 @@
+#container{
+	
+	width: 1000px;
+	height: 1000px;
+	margin: auto;
+	border: 1px solid black;
+}
+
+#recherche{
+	height: 750px;
+	width: 500px;
+	float: left;
+
+}
+
+#mapid{
+	height: 750px;
+	width: 500px;
+
+}
+
+#lieu{
+	background-color: red;
+	width: 500px;
+	height: 100px;
+	text-align: center;
+
+}
+.champs{
+	width: 480px;
+    height: 50px;
+    margin-top: 25px;
+
+
+}
+#description{
+	background-color: pink;
+	width: 500px;
+	height: 650px;
+
+}
