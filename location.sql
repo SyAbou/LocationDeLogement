@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 17 Septembre 2018 à 13:38
+-- Généré le :  Lun 17 Septembre 2018 à 16:18
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS `offre` (
   `id-createur` int(20) NOT NULL,
   `tarif-offre` int(10) NOT NULL,
   `desc-offre` varchar(500) NOT NULL,
-  `coordonnee X` float NOT NULL,
-  `cordonee Y` float NOT NULL,
+  `cordonne-X` float NOT NULL,
+  `cordonne-Y` float NOT NULL,
   `libelle-offre` varchar(20) NOT NULL,
   PRIMARY KEY (`id-offre`),
   KEY `id-createur` (`id-createur`)
