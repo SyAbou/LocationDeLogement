@@ -8,9 +8,9 @@
 
 include 'config.php';
 
-if (isset($_POST['GeoCor']))
+if (isset($_GET['GeoCor']))
 {
-$geocor = json_decode($_POST['GeoCor']);
+$geocor = json_decode($_GET['GeoCor']);
 $x = $geocor->coordinates[0];
 $y = $geocor->coordinates[1];
 
@@ -38,7 +38,7 @@ $ymax = $y+$const;
         $results=$query->fetchAll();
         header("Content-Type: application/json");
         header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: POST");
+        header("Access-Control-Allow-Methods: POST, GET");
         http_response_code(200);
         echo json_encode($results);
     }
