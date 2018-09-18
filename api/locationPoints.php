@@ -27,10 +27,6 @@ $ymax = $y+$const;
 
 
 
-//echo var_dump($geocor);
-//echo var_dump($geocor->coordinates[0]);
-
-
 
  $sql="SELECT cordonne FROM offre WHERE ST_CONTAINS(ST_GEOMFROMTEXT('POLYGON((".$xmin." ".$y.",".$x." ".$ymax.",".$xmax." ".$y.",".$x." ".$ymin.",".$xmin." ".$y."))',4326),ST_GeomFromGeoJSON(cordonne))=1";
  //echo $sql;
