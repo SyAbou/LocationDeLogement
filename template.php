@@ -46,19 +46,7 @@
 	<?php include "footer.html"; ?>
 	<script type="text/javascript">
    			var map = L.map('mapid').setView([48.8534, 2.3488], 13);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-//Marqueur de base
-L.marker([48.8534, 2.3488]).addTo(map)
-    .bindPopup('<div><h1>reservation</h1><form><input type="date" name="debut" placeholder="date de debut"><br /><input type="date" name="fin"placeholder="date de fin"><input type="submit" name="envoyer"></form></div>')
-    .openPopup();
-
-L.marker([48.8520, 2.3488]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
-
-
-   		
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);   		
    	</script>
 
 	<script src="lib/jquery/jquery-3.3.1.min.js"></script>

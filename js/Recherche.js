@@ -40,10 +40,45 @@ export default class Recherche{
 		let request = new Request(url, {
 			method: 'GET'
 		});
+		var result;
+
+		fetch(request)
+			.then( response => response.json() )
+			.then( data => {
+				result = data;
+				//console.log(data)
+				for(var item of data)
+				{
+					let cordonne = JSON.parse(item.cordonne);
+					//console.log(cordonne.coordinates);
+					//console.log(item);
+				    L.marker([cordonne.coordinates[1],cordonne.coordinates[0] ]).addTo(map)
+						.bindPopup('<div><h1>reservation</h1><form><input type="date" name="debut" placeholder="date de debut"><br /><input type="date" name="fin"placeholder="date de fin"><input type="submit" name="envoyer"></form></div>')
+						//.openPopup()
+					;
+				}
+			})
+//		console.log(result);
+
+		
+		
+	}
+	    
+     
+
+	/*infoMarkers(lat, long){
+		let url = `api/pointInfo.php?GeoCor={"type": "Point","coordinates": [lat,long]}`;
+
+		let request = new Request(url, {
+			method: 'GET'
+		});
 
 		fetch(request)
 			.then( response => response.json() )
 			.then( data => console.log(data) )
+	 
 		;
-	}
+	}*/
+
+
 }
