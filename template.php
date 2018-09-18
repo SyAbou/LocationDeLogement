@@ -44,13 +44,18 @@
 	<!-- Pied de page -->
 	<?php include "footer.html"; ?>
 	<script type="text/javascript">
-   			var map = L.map('mapid').setView([51.505, -0.09], 13);
+   			var map = L.map('mapid').setView([48.8534, 2.3488], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-L.marker([51.5, -0.09]).addTo(map)
+//Marqueur de base
+L.marker([48.8534, 2.3488]).addTo(map)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     .openPopup();
+
+L.marker([48.8520, 2.3488]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
+
 
    		
    	</script>

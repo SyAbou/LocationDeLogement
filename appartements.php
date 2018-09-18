@@ -17,28 +17,11 @@
 			<div id="lieu">
 				<input type="text" name="recherche" class="champs" placeholder="Lieux">
 			</div>
-			<div id="description">
-				<div class="title"><!--recuperation BDD-->
-					<p>Très bel appartement (RER Nanterre-Ville)</p>
-				</div>
-
-				<div class="picture"><!--recuperation BDD-->
-					<div id="slider">
-						<figure>
-						<img src="austin-fireworks.jpg" alt>
-						<img src="taj-mahal.jpg" alt>
-						<img src="ibiza.jpg" alt>
-						<img src="ankor-wat.jpg" alt>
-						<img src="austin-fireworks.jpg" alt>
-						</figure>
-					</div>
-				</div>
-
-				<div class="information"><!--recuperation BDD--></div>
-			</div>
 			
-
-
+			<div id="description">
+				<span> Tapez le nom d'une ville pour éffectuer la recherche</span>
+			</div>
+		
 		</div>
 
 		<div id="mapid">
@@ -54,6 +37,8 @@
 <div class="parallax-container col s12 hide-on-med-and-up hauteur260">
 	<div class="parallax"><img src="images/lac-du-bourget.jpg"></div>
 </div>
+
+<script type="module" src="js/appartement.js"></script>
 
 <?php $contenu = ob_get_clean(); ?>
 <?php require_once 'template.php'; ?>
