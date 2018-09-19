@@ -27,7 +27,6 @@ if(isset($_POST['user'])&&isset($_POST['offre'])&&isset($_POST['dateD'])&&isset(
         ]);
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Methods: POST, GET");
-        header("Location: ../appartements.php");
     }
     catch (PDOException $e)
     {
