@@ -18,6 +18,7 @@ if (isset($_POST['createur'])&&isset($_POST['tarif'])&&isset($_POST['desc'])&&is
     {
         $query->execute();
         header("Access-Control-Allow-Methods: POST, GET");
+        header("Location: ../appartements.php");
     }
     catch (PDOException $e)
     {
