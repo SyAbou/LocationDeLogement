@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="row withoutMarginBot">
+<div class="row withoutMarginBot">	
 	<div id="divTitre" class="col l8 m8 s10 offset-l2 offset-m2 offset-s1 hide-on-small-only">
 		<h1 id="titre" class="white-text center">Recherche des locations</h1>
 	</div>
