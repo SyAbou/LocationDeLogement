@@ -4,6 +4,11 @@ export default class Recherche{
 		this.champs.addEventListener('input', this.inputChamps.bind(this));
 	}
 
+	recupInfo(){
+		alert("salut");
+	}
+
+
 	getMaps(map){
 		this.map = map;
 
@@ -34,7 +39,9 @@ export default class Recherche{
 		
 	}
 
+
 	createMarkers(lat, long){
+
 		let url = `api/locationPoints.php?GeoCor={"type": "Point","coordinates": [${long},${lat}]}`;
 
 		let request = new Request(url, {
@@ -52,17 +59,56 @@ export default class Recherche{
 					let cordonne = JSON.parse(item.cordonne);
 					//console.log(cordonne.coordinates);
 					//console.log(item);
+					//pas touche a la popup
 				    L.marker([cordonne.coordinates[1],cordonne.coordinates[0] ]).addTo(map)
-						.bindPopup('<div><h1>reservation</h1><form><input type="date" name="debut" placeholder="date de debut"><br /><input type="date" name="fin"placeholder="date de fin"><input type="submit" name="envoyer"></form></div>')
+						.bindPopup('<div><h1>reservation</h1><div><input type="date" name="dateD" placeholder="date de debut"><br /><input type="date" name="dateF" placeholder="date de fin"><button class="button-popup" data-id="'+item.id_offre+'">Click me</button></div></div>')
+						.on('click', function() { Recherche.clickPopupButtons() })
 						//.openPopup()
 					;
 				}
+				
 			})
-//		console.log(result);
+//		console.log(result);.
 
-		
-		
 	}
+
+	static clickPopupButtons(e){
+		
+		let buttonsPopup = Array.from(document.querySelectorAll('.button-popup'));
+		buttonsPopup.map( el => {
+			el.addEventListener('click', () => {
+				let id = el.dataset.id;
+				let dateD = el.previousElementSibling.previousElementSibling.previousElementSibling.value;
+				let dateF = el.previousElementSibling.value;
+				//console.log(dateD, dateF);
+				//() => {
+					console.log('toto');
+					let url = `api/reservation.php`;
+					let formData = new FormData();
+					formData.append('user', 1);
+					formData.append('offre', id);
+					formData.append('dateD', dateD);
+					formData.append('dateF', dateF);
+					let request = new Request(url, {
+						method: 'POST',
+						body: formData
+					});
+					var result;
+
+					fetch(request)
+						.then( response => response.json() )
+						.then( data => {
+							console.log(data);
+						});	
+				//}
+			})
+		}) 
+	}
+
+
+	 
+
+
 	    
      
 
