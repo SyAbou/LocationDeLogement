@@ -30,6 +30,8 @@
 
 	<!-- PgwSlideShow -->
 	<link rel="stylesheet" type="text/css" href="lib/pgwslideshow/pgwslideshow.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
 
