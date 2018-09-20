@@ -9,21 +9,36 @@
 		<div class="col s10 offset-s1">
 			<h3 id="titreSmall" class="white-text center">Recherche des locations</h3>
 		</div>
-		<div class="parallax"><img src="images/Lac_du_Bourget_et_le_Revard.min.jpg"></div>
+		<!-- <div class="parallax"><img src="images/Lac_du_Bourget_et_le_Revard.min.jpg"></div> -->
 	</div>
 
 </div>
-<div id="container">
+<div id="container-offre">
 		<!-- ici abou sy -->
-	<form action="" method="">
-		<label for="number" >Tarifs:</label>
-	<input type="number" name="tarif_offre" value="">
-		<label for="number" >descriptif d'offre:</label>
-		<input type="text" name="desc_offre" value="">
-		<label for="text" >coordonnée:</label>
-		<input type="text" name="cordonne" value="">
-		<label for="name" >libelle offre:</label>
-		<input type="text" name="libelle_offre" value="">
+	<form action="api/offreAdd" method="POST" class="formu">
+
+		<select name="createur" id="users">
+		<?php
+			include 'api/config.php';
+			$reponse = $db->query('SELECT * FROM users');
+			
+			while ($donnees = $reponse->fetch())
+			{
+		?>
+           <option value="<?php echo $donnees['id_users']; ?>"> <?php echo $donnees['nom_users']; ?>
+           	
+           </option>
+		<?php
+			}
+			$reponse->closeCursor();
+		?>
+</select>
+
+		<input type="number" name="tarif"  placeholder="Tarifs">
+		<input type="text" name="desc"  placeholder="descriptif d'offre">
+		<input type="text" name="cordonne"  placeholder="coordonnée">
+		<input type="text" name="libelle" placeholder="libelle offre">
+		<input type="submit" name="Ajouter!">
 	</form>
 </div>
 
