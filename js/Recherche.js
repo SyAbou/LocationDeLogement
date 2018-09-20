@@ -62,7 +62,7 @@ export default class Recherche{
 					//pas touche a la popup
 				    L.marker([cordonne.coordinates[1],cordonne.coordinates[0] ]).addTo(map)
 						.bindPopup('<div><h1>reservation</h1><div><input type="date" name="dateD" placeholder="date de debut"><br /><input type="date" name="dateF" placeholder="date de fin"><button class="button-popup" data-id="'+item.id_offre+'">Click me</button></div></div>')
-						.on('click', function() { Recherche.clickPopupButtons(lat,long) })
+						.on('click', function() { Recherche.clickPopupButtons(cordonne.coordinates[1],cordonne.coordinates[0]) })
 						//.openPopup()
 					;
 				}
@@ -86,7 +86,8 @@ export default class Recherche{
                 .then( response => response.json() )
                 .then( data => {
                 	//sonny a faire les info dans innerhtml
-                	elem.innerHTML(data);
+                	elem.innerHTML=console.log(data);
+                	elem.innerHTML= '<div class="title">'+data[0].libelle_offre+'</div><div class="desc">'+data[0].desc_offre+'</div><div class="prix">'+data[0].tarif_offre+'€/sem'+'</div>';
                 });
 
 
