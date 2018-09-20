@@ -15,6 +15,16 @@
 </div>
 <div id="container">
 		<!-- ici abou sy -->
+	<form action="" method="">
+		<label for="number" >Tarifs:</label>
+	<input type="number" name="tarif_offre" value="">
+		<label for="number" >descriptif d'offre:</label>
+		<input type="text" name="desc_offre" value="">
+		<label for="text" >coordonnée:</label>
+		<input type="text" name="cordonne" value="">
+		<label for="name" >libelle offre:</label>
+		<input type="text" name="libelle_offre" value="">
+	</form>
 </div>
 
 
