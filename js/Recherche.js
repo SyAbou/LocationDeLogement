@@ -62,7 +62,7 @@ export default class Recherche{
 					//pas touche a la popup
 				    L.marker([cordonne.coordinates[1],cordonne.coordinates[0] ]).addTo(map)
 						.bindPopup('<div><h1>reservation</h1><div><input type="date" name="dateD" placeholder="date de debut"><br /><input type="date" name="dateF" placeholder="date de fin"><button class="button-popup" data-id="'+item.id_offre+'">Click me</button></div></div>')
-						.on('click', function() { Recherche.clickPopupButtons() })
+						.on('click', function() { Recherche.clickPopupButtons(lat,long) })
 						//.openPopup()
 					;
 				}
@@ -72,16 +72,33 @@ export default class Recherche{
 
 	}
 
-	static clickPopupButtons(e){
-		
+	static clickPopupButtons(lat,long){
+
+		let infoOffre = Array.from(document.querySelectorAll('#description'));
+
+		infoOffre.map(elem=>{
+            let url = `api/PointInfo.php?GeoCor={"type": "Point","coordinates": [${long},${lat}]}`;
+            let request = new Request(url, {
+                method: 'GET'
+            });
+
+            fetch(request)
+                .then( response => response.json() )
+                .then( data => {
+                	//sonny a faire les info dans innerhtml
+                	elem.innerHTML(data);
+                });
+
+
+		})
+
 		let buttonsPopup = Array.from(document.querySelectorAll('.button-popup'));
 		buttonsPopup.map( el => {
 			el.addEventListener('click', () => {
 				let id = el.dataset.id;
 				let dateD = el.previousElementSibling.previousElementSibling.previousElementSibling.value;
 				let dateF = el.previousElementSibling.value;
-				//console.log(dateD, dateF);
-				//() => {
+
 					console.log('toto');
 					let url = `api/reservation.php`;
 					let formData = new FormData();
@@ -99,8 +116,7 @@ export default class Recherche{
 						.then( response => response.json() )
 						.then( data => {
 							console.log(data);
-						});	
-				//}
+						});
 			})
 		}) 
 	}
