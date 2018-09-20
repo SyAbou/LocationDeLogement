@@ -4,9 +4,9 @@ session_start();
 ?>
 	<div id="menuHorizontal" class="center hide-on-small-only">
 		<a href="#" class="grey-text text-lighten-3">Accueil</a><div class="separator"></div>
-
+<?php if(isset($_SESSION['role'])&&($_SESSION['role']==1)){ ?>
 		<a href="ajout-offre.php" class="grey-text text-lighten-3">Ajout de locations</a><div class="separator"></div>
-
+<?php } ?>
 		
 		<a href="appartements.php" class="grey-text text-lighten-3">Locations</a><div class="separator"></div>
 <?php 

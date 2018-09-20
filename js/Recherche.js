@@ -100,6 +100,14 @@ export default class Recherche{
 				let dateD = el.previousElementSibling.previousElementSibling.previousElementSibling.value;
 				let dateF = el.previousElementSibling.value;
 
+					if (dateD>dateF)
+					{
+						let tempdate;
+						tempdate = dateF;
+						dateF = dateD;
+						dateD = tempdate;
+					}
+
 					console.log('toto');
 					let url = `api/reservation.php`;
 					let formData = new FormData();
