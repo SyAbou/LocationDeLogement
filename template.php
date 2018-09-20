@@ -36,7 +36,7 @@
 <body>
 
 	<!-- Menu -->
-	<?php include "menu.html"; ?>
+	<?php include "menu.php"; ?>
 
 	<!-- Contenu -->
 	<main>
