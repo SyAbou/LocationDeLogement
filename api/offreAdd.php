@@ -9,8 +9,15 @@
 
 include 'config.php';
 
-if (isset($_POST['createur'])&&isset($_POST['tarif'])&&isset($_POST['desc'])&&isset($_POST['cordonne'])&&isset($_POST['libelle'])) {
-    $sql="INSERT INTO `offre`(  `id_createur`, `tarif_offre`, `desc_offre`, `cordonne`, `libelle_offre`) VALUES (".$_POST['createur'].",".$_POST['tarif'].",'".$_POST['desc']."','".$_POST['cordonne']."','".$_POST['libelle']."')";
+if (isset($_POST['createur'])&&isset($_POST['tarif'])&&isset($_POST['desc'])&&isset($_POST['long'])&&isset($_POST['lat'])&&isset($_POST['libelle'])) {
+    $coordone = '{
+    "type": "Point",
+    "coordinates": [
+        '.$_POST['long'].',
+        '.$_POST['lat'].'
+    ]
+}';
+    $sql="INSERT INTO `offre`(  `id_createur`, `tarif_offre`, `desc_offre`, `cordonne`, `libelle_offre`) VALUES (".$_POST['createur'].",".$_POST['tarif'].",'".$_POST['desc']."','".$coordone."','".$_POST['libelle']."')";
     echo $sql;
     $query	= $db->prepare($sql);
 
