@@ -10,9 +10,18 @@ export default class Recherche{
         fetch(requestSess)
             .then( response => response.json() )
             .then( data => {
-            	window.sessionStorage.set('id',data);
+                window.sessionStorage.set('id',data);
             });
 
+        let requestAdmin = new Request(`api/userId.php`, {
+            method: 'GET'
+        });
+
+        fetch(requestAdmin)
+            .then( response => response.json() )
+            .then( data => {
+                window.sessionStorage.set('admin',data);
+            });
 	}
 
 
@@ -123,7 +132,7 @@ export default class Recherche{
 					console.log('toto');
 					let url = `api/reservation.php`;
 					let formData = new FormData();
-					formData.append('user', 1);
+					formData.append('user', window.sessionStorage.getItem('id'));
 					formData.append('offre', id);
 					formData.append('dateD', dateD);
 					formData.append('dateF', dateF);
@@ -131,7 +140,6 @@ export default class Recherche{
 						method: 'POST',
 						body: formData
 					});
-					var result;
 
 					fetch(request)
 						.then( response => response.json() )
