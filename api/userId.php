@@ -6,7 +6,7 @@
  * Time: 16:06
  */
 
-
+session_start();
 if(isset($_SESSION['id']))
 {
     header("Content-Type: application/json");
@@ -19,5 +19,5 @@ else
     header("Content-Type: application/json");
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Methods: POST, GET");
-    echo json_encode();
+    echo json_encode(null);
 }

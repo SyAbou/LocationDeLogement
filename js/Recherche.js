@@ -2,17 +2,29 @@ export default class Recherche{
 	constructor(){
 		this.champs = document.querySelector('.champs');
 		this.champs.addEventListener('input', this.inputChamps.bind(this));
+
+        let requestSess = new Request(`api/userId.php`, {
+            method: 'GET'
+        });
+
+        fetch(requestSess)
+            .then( response => response.json() )
+            .then( data => {
+            	window.sessionStorage.set('id',data);
+            });
+
 	}
 
-	recupInfo(){
-		alert("salut");
-	}
+
+
 
 
 	getMaps(map){
 		this.map = map;
 
 	}
+
+
 
 
 	inputChamps(e){
