@@ -1,14 +1,23 @@
 <header>
-
+<?php
+session_start();
+?>
 	<div id="menuHorizontal" class="center hide-on-small-only">
-		<a href="index.php" class="grey-text text-lighten-3">Accueil</a><div class="separator"></div>
-
+		<a href="#" class="grey-text text-lighten-3">Accueil</a><div class="separator"></div>
+<?php if(isset($_SESSION['role'])&&($_SESSION['role']==1)){ ?>
 		<a href="ajout-offre.php" class="grey-text text-lighten-3">Ajout de locations</a><div class="separator"></div>
-
+<?php } ?>
 		
 		<a href="appartements.php" class="grey-text text-lighten-3">Locations</a><div class="separator"></div>
-		<a href="login.php" class="grey-text text-lighten-3">Login</a><div class="separator"></div>
+<?php 
+if(!isset($_SESSION['id']))
+{ 
+?>
+		<a href="login.php" class="grey-text text-lighten-3">Login<?php echo $_SESSION['id'];?></a><div class="separator"></div>
 		<a href="inscription.php" class="grey-text text-lighten-3">Sign up</a>
+<?php 
+}
+?>
 	</div>
 
 	<h6 id="titreMenuSmall" class="center hide-on-med-and-up"></h6>
