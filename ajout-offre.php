@@ -36,7 +36,8 @@
 
 		<input type="number" name="tarif"  placeholder="Tarifs">
 		<input type="text" name="desc"  placeholder="descriptif d'offre">
-		<input type="text" name="cordonne"  placeholder="coordonnée">
+		<input type="text" name="long" placeholder="coordonne long">
+		 <input type="text"  name="lat" placeholder="coordonne lat">
 		<input type="text" name="libelle" placeholder="libelle offre">
 		<input type="submit" name="Ajouter!">
 	</form>
