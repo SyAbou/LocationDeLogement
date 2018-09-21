@@ -18,8 +18,9 @@ if(!isset($_SESSION['id']))
 		<a href="inscription.php" class="grey-text text-lighten-3">Sign up</a>
 <?php 
 } else {
-	echo "<span class="glyphicon glyphicon-user"></span>";
-	echo "&nbsp;&nbsp;&nbsp;".$_SESSION['nom']." ".$_SESSION['prenom'];
+	
+	echo '<a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">account_circle</i></a>';
+	echo '<span class="username">'.ucfirst($_SESSION['nom'])." ".ucfirst($_SESSION['prenom']).'</span>';
 	echo '
 <ul id="dropdown1" class="dropdown-content">
   <li><a href="api/logout.php">logout</a></li>
@@ -27,7 +28,6 @@ if(!isset($_SESSION['id']))
   <li class="divider"></li>
   <li><a href="#!">reset password</a></li>
 </ul>
-<a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
 	';
 	
 }

@@ -260,4 +260,18 @@ input[type="submit"] {
     height: 50px;
     width: 100%;
     font-size: 30px;
+
+}
+
+
+.dropdown-trigger, .username{
+	color: white;
+}
+
+.dropdown-trigger > .material-icons{
+	vertical-align: bottom;
+}
+
+.username{
+	margin: 0 0 0 15px;
 }
