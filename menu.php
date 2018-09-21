@@ -18,17 +18,17 @@ if(!isset($_SESSION['id']))
 		<a href="inscription.php" class="grey-text text-lighten-3">Sign up</a>
 <?php 
 } else {
+	echo "<span class="glyphicon glyphicon-user"></span>";
 	echo "&nbsp;&nbsp;&nbsp;".$_SESSION['nom']." ".$_SESSION['prenom'];
 	echo '
 <ul id="dropdown1" class="dropdown-content">
   <li><a href="api/logout.php">logout</a></li>
-  <li><a href="#!">two</a></li>
+  <li><a href="#!">Profil</a></li>
   <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><a href="#!">reset password</a></li>
 </ul>
 <a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
 	';
-	echo '<a href="api/logout.php" class="grey-text text-lighten-3">Logout</a><div class="separator"></div>';
 	
 }
 ?>
