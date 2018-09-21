@@ -1,3 +1,5 @@
+Projet Groupe ASSON
+
 Membre du groupe:
 
 Sonny Cabrisseau
@@ -6,13 +8,29 @@ Abou Sy
 Alexandre Arinoushkine
 Najlaa Eljaafari
 
-Lien du discord : https://discord.gg/rWfQTM
+
 
 Techno:
 PHP NATIF
 HTML/CSS
 JAVASCRIPT/JQuery
 MY SQL/WAMP
+
+Tâches:
+
+Réalisation de la BDD (Ones Azouzi)
+Réalisation des maquettes et développement des maquettes(Sonny Cabrisseau)
+Connexion a la BDD et API(Alexandre Arinoushkine,Najlaa Eljaafari)
+Ajax, Jquery(Ones Azouzi,Sonny Cabrisseau)
+Intégration des cartes, marqueurs et évenement(Sonny Cabrisseau,Abou Sy)
+Création d'une partie admin/users(Abou Sy,Alexandre Arinoushkine)
+Création d'une page d'accueil(Alexandre Arinoushkine)
+
+
+
+
+
+
 
 
 
