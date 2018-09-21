@@ -1,6 +1,7 @@
 <header>
 <?php
 session_start();
+//var_dump($_SESSION);
 ?>
 	<div id="menuHorizontal" class="center hide-on-small-only">
 		<a href="#" class="grey-text text-lighten-3">Accueil</a><div class="separator"></div>
@@ -16,6 +17,19 @@ if(!isset($_SESSION['id']))
 		<a href="login.php" class="grey-text text-lighten-3">Login</a><div class="separator"></div>
 		<a href="inscription.php" class="grey-text text-lighten-3">Sign up</a>
 <?php 
+} else {
+	echo "&nbsp;&nbsp;&nbsp;".$_SESSION['nom']." ".$_SESSION['prenom'];
+	echo '
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="api/logout.php">logout</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+<a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+	';
+	echo '<a href="api/logout.php" class="grey-text text-lighten-3">Logout</a><div class="separator"></div>';
+	
 }
 ?>
 	</div>
@@ -38,3 +52,6 @@ if(!isset($_SESSION['id']))
 
 
 </header>
+<script type="text/javascript">
+	$(".dropdown-trigger").dropdown();
+</script>

@@ -15,10 +15,10 @@
 </div>
 <div id="container-offre">
 		<!-- ici abou sy -->
-	<form action="api/login.php" method="POST" class="formu">
-		<input type="email" name="login"  placeholder="adresse mail">
-		<input type="password" name="pws"  placeholder="mot de passe">
-		<input type="submit" name="connexion">
+	<form action="api/login.php" method="POST" class="form">
+		<input type="email" name="login" id="mail" placeholder="adresse mail" required>
+		<input type="password" name="pws" id="mot_de_passe" placeholder="mot de passe" required>
+		<center><button type="submit">valider</button></center>
 	</form>
 </div>
 
@@ -35,3 +35,22 @@
 
 <?php $contenu = ob_get_clean(); ?>
 <?php require_once 'template.php'; ?>
+<script type="text/javascript">
+
+	let form = document.querySelector('.form');
+
+	function onSubmit(e){
+		e.preventDefault();
+		var mot_de_passe1= document.getElementById('mot_de_passe').value;
+		var mail = document.getElementById('mail').value;
+
+		if(mot_de_passe.length === 0 && mail.length === 0))
+		{   
+			alert('il faut remplir les champs!');
+		}
+		else
+		{
+			form.submit();
+		}
+	}
+	</script>

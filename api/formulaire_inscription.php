@@ -1,6 +1,6 @@
 <?php
 
-include 'api/config.php';
+include 'config.php';
 $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
 $sexe = $_POST["sexe"];
