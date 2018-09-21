@@ -6,7 +6,7 @@ $prenom = $_POST["prenom"];
 $sexe = $_POST["sexe"];
 $mail = $_POST["mail"];
 $password = $_POST["password"];
-$role= 1;
+$role= 0;
 $valide=true;
 	if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
     $req=$db->prepare('SELECT count(id_users) As nb  FROM users WHERE mail_users =:mail');
