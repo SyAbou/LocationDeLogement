@@ -27,6 +27,7 @@ if(isset($_POST['user'])&&isset($_POST['offre'])&&isset($_POST['dateD'])&&isset(
         ]);
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Methods: POST, GET");
+         echo json_encode(null);
     }
     catch (PDOException $e)
     {

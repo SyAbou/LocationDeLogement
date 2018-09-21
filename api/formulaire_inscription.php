@@ -29,7 +29,7 @@ else
 
 if($valide)
 {
-	header('Location: appartements.php');
+	header('Location: ../appartements.php');
 }
 else
 {
