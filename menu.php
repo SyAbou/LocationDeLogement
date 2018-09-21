@@ -13,7 +13,7 @@ session_start();
 if(!isset($_SESSION['id']))
 { 
 ?>
-		<a href="login.php" class="grey-text text-lighten-3">Login<?php echo $_SESSION['id'];?></a><div class="separator"></div>
+		<a href="login.php" class="grey-text text-lighten-3">Login</a><div class="separator"></div>
 		<a href="inscription.php" class="grey-text text-lighten-3">Sign up</a>
 <?php 
 }
