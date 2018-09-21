@@ -10,7 +10,7 @@ export default class Recherche{
         fetch(requestSess)
             .then( response => response.json() )
             .then( data => {
-                window.sessionStorage.set('id',data);
+                window.sessionStorage.setItem('id',data);
             });
 
         let requestAdmin = new Request(`api/userId.php`, {
@@ -20,7 +20,7 @@ export default class Recherche{
         fetch(requestAdmin)
             .then( response => response.json() )
             .then( data => {
-                window.sessionStorage.set('admin',data);
+                window.sessionStorage.setItem('admin',data);
             });
 	}
 
@@ -145,6 +145,7 @@ export default class Recherche{
 						.then( response => response.json() )
 						.then( data => {
 							console.log(data);
+							map.closePopup();
 						});
 			})
 		}) 

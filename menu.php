@@ -18,7 +18,7 @@ if(!isset($_SESSION['id']))
 		<a href="inscription.php" class="grey-text text-lighten-3">Sign up</a>
 <?php 
 } else {
-	echo "<span class="glyphicon glyphicon-user"></span>";
+	echo '<span class="glyphicon glyphicon-user"></span>';
 	echo "&nbsp;&nbsp;&nbsp;".$_SESSION['nom']." ".$_SESSION['prenom'];
 	echo '
 <ul id="dropdown1" class="dropdown-content">
