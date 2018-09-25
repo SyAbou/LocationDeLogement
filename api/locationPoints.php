@@ -44,7 +44,7 @@ $ymax = $y+$const;
     }
     catch (PDOException $e)
     {
-        echo $e->getMessage();
+        echo json_encode($e->getMessage());
         exit;
     }
 

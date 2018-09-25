@@ -10,7 +10,7 @@ export default class Recherche{
         fetch(requestSess)
             .then( response => response.json() )
             .then( data => {
-                window.sessionStorage.set('id',data);
+                window.sessionStorage.setItem('id',data);
             });
 
         let requestAdmin = new Request(`api/userId.php`, {
@@ -20,7 +20,7 @@ export default class Recherche{
         fetch(requestAdmin)
             .then( response => response.json() )
             .then( data => {
-                window.sessionStorage.set('admin',data);
+                window.sessionStorage.setItem('admin',data);
             });
 	}
 
@@ -38,7 +38,7 @@ export default class Recherche{
 
 	inputChamps(e){
 		let value = e.target.value;
-		let url = `https://photon.komoot.de/api/?q=${value}&limit=5`;
+		let url = `https://photon.komoot.de/api/?q=${value}&limit=5&lang=fr`;
 
 		let request = new Request(url, {
 			method: 'GET'
@@ -47,7 +47,7 @@ export default class Recherche{
 		fetch(request)
 			.then( response => response.json() )
 			.then( data =>{
-				console.log("this.map"+this.map)
+				//console.log("this.map"+this.map)
 				let lat = data.features[0].geometry.coordinates[1];
 				let long = data.features[0].geometry.coordinates[0];
 				this.map.panTo([lat,long]);
@@ -74,9 +74,10 @@ export default class Recherche{
 			.then( response => response.json() )
 			.then( data => {
 				result = data;
-				//console.log(data)
+				console.log(data)
 				for(var item of data)
 				{
+
 					let cordonne = JSON.parse(item.cordonne);
 					//console.log(cordonne.coordinates);
 					//console.log(item);
@@ -145,6 +146,7 @@ export default class Recherche{
 						.then( response => response.json() )
 						.then( data => {
 							console.log(data);
+							map.closePopup();
 						});
 			})
 		}) 

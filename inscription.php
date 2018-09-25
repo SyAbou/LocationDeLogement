@@ -1,11 +1,11 @@
 <?php ob_start(); ?>
 
 
-<div class="formulaire_inscription" id="container">
+<div class="formulaire_inscription" id="container-offre">
 	<div id=panel class="panel panel-primary">
 	<div class="panel-heading">Inscription</div>
 	<div class="panel-body">
-	<form method="post" class="myform" action="formulaire_inscription.php">
+	<form method="post" class="form" action="api/formulaire_inscription.php">
 	Nom: <input type="text" name="nom" size="3">
 	Prénom: <input type="text" name="prenom">
 	Sexe :
@@ -33,54 +33,8 @@
 </div>
 
 <script type="module" src="js/appartement.js"></script>
+	<script type="module" src="js/inscription.js"></script>
 
 <?php $contenu = ob_get_clean(); ?>
 <?php require_once 'template.php'; ?>
 
-<script type="text/javascript">
-
-	let form = document.querySelector('.myform');
-
-	form.addEventListener('submit', onSubmit);
-
-	function onSubmit(e){
-		e.preventDefault();
-		let valid = true;
-		var mot_de_passe1= document.getElementById('mot_de_passe1').value;
-		var mot_de_passe2= document.getElementById('mot_de_passe2').value;
-		var mail = document.getElementById('mail');
-		//console.log(verifMail(mail));
-		//console.log((mot_de_passe1 == mot_de_passe2));
-		if((mot_de_passe1 == mot_de_passe2) && verifMail(mail))
-		{   
-			valid = true;
-		}
-		else
-		{
-			alert("Verification");
-			valid = false;
-		}
-
-		if(valid){
-			form.submit();
-		}
-	}
-
-	function verifMail(champ)
-{
-   var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-   if(!regex.test(champ.value))
-   {
-      //surligne(champ, true);
-      return false;
-   }
-   else
-   {
-      //surligne(champ, false);
-      return true;
-   }
-}
-
-
-</script>
